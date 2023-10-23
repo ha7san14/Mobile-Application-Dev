@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MAD_Proj_BCSF20M525</string>
+    <string-array name="login_signup_options">
+        <item>Select an option</item>
+        <item>Login</item>
+        <item>Signup</item>
+    </string-array>
+</resources>
