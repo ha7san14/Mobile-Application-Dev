@@ -208,7 +208,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     result = operand1 * operand2;
                     break;
                 case "/":
-                    if (operand2 != 0) {
+                    if (operand1 != 0) {
                         result = operand1 / operand2;
                     } else {
                         resultTextView.setText("Error");
