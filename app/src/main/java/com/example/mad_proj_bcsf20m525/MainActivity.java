@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mad_proj_bcsf20m525.Activities.LoginActivity;
-import com.example.mad_proj_bcsf20m525.Activities.SignupActivity;
+import com.example.mad_proj_bcsf20m525.Activities.login_signup.LoginActivity;
+import com.example.mad_proj_bcsf20m525.Activities.login_signup.SignupActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Spinner spinner;

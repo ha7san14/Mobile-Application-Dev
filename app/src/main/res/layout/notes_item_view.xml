@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/lightblack">
+
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Title" />
+
+    <TextView
+        android:id="@+id/text_view_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:text="Description" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/text_view_description"
+        android:layout_marginTop="10dp"
+        android:background="@color/orange" />
+
+    <!-- Edit Icon -->
+    <ImageView
+        android:id="@+id/image_view_edit"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentEnd="true"
+        android:src="@android:drawable/ic_menu_edit"
+        android:backgroundTint="@color/orange"/>
+
+    <!-- Delete Icon -->
+    <ImageView
+        android:id="@+id/image_view_delete"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@+id/image_view_edit"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/orange"
+        android:src="@android:drawable/ic_menu_delete" />
+</RelativeLayout>

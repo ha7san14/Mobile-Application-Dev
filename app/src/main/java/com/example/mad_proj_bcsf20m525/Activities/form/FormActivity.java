@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Activities;
+package com.example.mad_proj_bcsf20m525.Activities.form;
 
 import android.app.Dialog;
 import android.os.Bundle;

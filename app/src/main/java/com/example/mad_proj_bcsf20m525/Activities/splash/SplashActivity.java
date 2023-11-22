@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Activities;
+package com.example.mad_proj_bcsf20m525.Activities.splash;
 
 import android.content.Intent;
 import android.os.Bundle;

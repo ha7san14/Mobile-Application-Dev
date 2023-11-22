@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Activities;
+package com.example.mad_proj_bcsf20m525.Activities.calculator;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;

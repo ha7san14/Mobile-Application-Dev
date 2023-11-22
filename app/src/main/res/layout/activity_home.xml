@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/lightblack"
     android:gravity="center"
-    tools:context=".Activities.HomeActivity">
+    tools:context=".Activities.home.HomeActivity">
 
     <ImageView
         android:layout_width="250dp"
@@ -32,6 +32,16 @@
         android:layout_height="wrap_content"
         android:text="Go to Form"
         android:id="@+id/todoButton"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/orange"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Go to Notes"
+        android:id="@+id/notesButton"
         android:textSize="30sp"
         android:textColor="@color/white"
         android:backgroundTint="@color/orange"/>

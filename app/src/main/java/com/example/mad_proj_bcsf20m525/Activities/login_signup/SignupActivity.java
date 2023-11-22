@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Activities;
+package com.example.mad_proj_bcsf20m525.Activities.login_signup;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mad_proj_bcsf20m525.Activities.home.HomeActivity;
 import com.example.mad_proj_bcsf20m525.Model.CredentialsManager;
 import com.example.mad_proj_bcsf20m525.R;
 

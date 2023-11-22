@@ -9,7 +9,7 @@
     android:background="@color/lightblack"
     android:gravity="center"
     android:padding="16dp"
-    tools:context=".Activities.LoginActivity">
+    tools:context=".Activities.login_signup.LoginActivity">
 
 <ImageView
     android:layout_width="wrap_content"

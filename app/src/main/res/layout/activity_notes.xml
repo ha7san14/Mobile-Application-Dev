@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightblack"
-    tools:context=".Activities.form.FormActivity">
+    tools:context=".Activities.notes.NotesActivity">
 
     <!-- RecyclerView to display saved text -->
     <androidx.recyclerview.widget.RecyclerView
