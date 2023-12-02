@@ -45,4 +45,14 @@
         android:textSize="30sp"
         android:textColor="@color/white"
         android:backgroundTint="@color/orange"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Go to API Testing"
+        android:id="@+id/apiButton"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/orange"/>
 </LinearLayout>
