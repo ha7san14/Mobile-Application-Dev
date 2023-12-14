@@ -16,6 +16,15 @@
         android:theme="@style/Theme.MAD_Proj_BCSF20M525"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.Fragments.FragmentMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Fragments.SecondFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Fragments.FirstFragmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.PostAPI.PostApiActivity"
             android:exported="false" />
         <activity

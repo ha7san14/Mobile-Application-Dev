@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mad_proj_bcsf20m525.Activities.API.ApiActivity;
+import com.example.mad_proj_bcsf20m525.Activities.Fragments.FragmentMainActivity;
 import com.example.mad_proj_bcsf20m525.Activities.PostAPI.PostApiActivity;
 import com.example.mad_proj_bcsf20m525.Activities.calculator.CalculatorActivity;
 import com.example.mad_proj_bcsf20m525.Activities.form.FormActivity;
@@ -20,17 +21,20 @@ public class HomeActivity extends AppCompatActivity {
     private Button apiButton;
     private Button notesButton;
     private Button postapiButton;
+    private Button fragmentButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         calculatorButton = findViewById(R.id.calculatorButton);
         todoButton = findViewById(R.id.todoButton);
         notesButton = findViewById(R.id.notesButton);
         apiButton = findViewById(R.id.apiButton);
         postapiButton = findViewById(R.id.postapiButton);
+        fragmentButton = findViewById(R.id.fragmentButton);
 
 
         calculatorButton.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +61,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        fragmentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, FragmentMainActivity.class);
+                startActivity(intent);
+            }
+        });
         apiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
