@@ -1,10 +1,12 @@
-package com.example.mad_proj_bcsf20m525;
+package com.example.mad_proj_bcsf20m525.Activities.form;
 
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mad_proj_bcsf20m525.R;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
     public TextView nameView;

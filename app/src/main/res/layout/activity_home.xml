@@ -55,4 +55,14 @@
         android:textSize="30sp"
         android:textColor="@color/white"
         android:backgroundTint="@color/orange"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Go to PostAPI"
+        android:id="@+id/postapiButton"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/orange"/>
 </LinearLayout>

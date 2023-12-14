@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mad_proj_bcsf20m525.Activities.home.HomeActivity;
-import com.example.mad_proj_bcsf20m525.Model.CredentialsManager;
 import com.example.mad_proj_bcsf20m525.R;
 
 public class SignupActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Adapter;
+package com.example.mad_proj_bcsf20m525.Activities.form;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mad_proj_bcsf20m525.Model.Item;
-import com.example.mad_proj_bcsf20m525.MyViewHolder;
 import com.example.mad_proj_bcsf20m525.R;
 
 import java.util.List;

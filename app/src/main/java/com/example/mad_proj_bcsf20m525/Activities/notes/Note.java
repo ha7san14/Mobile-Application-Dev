@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Model.Note;
+package com.example.mad_proj_bcsf20m525.Activities.notes;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

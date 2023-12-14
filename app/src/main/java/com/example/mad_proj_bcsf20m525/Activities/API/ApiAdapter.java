@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Adapter;
+package com.example.mad_proj_bcsf20m525.Activities.API;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

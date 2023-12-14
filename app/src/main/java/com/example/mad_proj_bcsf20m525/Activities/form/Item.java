@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Model;
+package com.example.mad_proj_bcsf20m525.Activities.form;
 
 public class Item {
     String name;

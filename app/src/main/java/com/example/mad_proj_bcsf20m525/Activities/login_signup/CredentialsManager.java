@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Model;
+package com.example.mad_proj_bcsf20m525.Activities.login_signup;
 
 import java.util.HashMap;
 import java.util.Map;

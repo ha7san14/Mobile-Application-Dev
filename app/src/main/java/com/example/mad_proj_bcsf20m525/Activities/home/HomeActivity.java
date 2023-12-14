@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mad_proj_bcsf20m525.Activities.API.ApiActivity;
+import com.example.mad_proj_bcsf20m525.Activities.PostAPI.PostApiActivity;
 import com.example.mad_proj_bcsf20m525.Activities.calculator.CalculatorActivity;
 import com.example.mad_proj_bcsf20m525.Activities.form.FormActivity;
 import com.example.mad_proj_bcsf20m525.Activities.notes.NotesActivity;
@@ -18,6 +19,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button apiButton;
     private Button notesButton;
+    private Button postapiButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         todoButton = findViewById(R.id.todoButton);
         notesButton = findViewById(R.id.notesButton);
         apiButton = findViewById(R.id.apiButton);
+        postapiButton = findViewById(R.id.postapiButton);
 
 
         calculatorButton.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +61,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ApiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        postapiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, PostApiActivity.class);
                 startActivity(intent);
             }
         });

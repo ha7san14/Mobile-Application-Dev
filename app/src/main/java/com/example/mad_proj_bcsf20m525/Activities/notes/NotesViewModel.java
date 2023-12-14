@@ -1,14 +1,9 @@
 package com.example.mad_proj_bcsf20m525.Activities.notes;
 
 import android.app.Application;
-import android.os.AsyncTask;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-
-import com.example.mad_proj_bcsf20m525.Model.Note.Note;
-import com.example.mad_proj_bcsf20m525.Model.Note.NoteDao;
-import com.example.mad_proj_bcsf20m525.Model.Note.NoteDatabase;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;

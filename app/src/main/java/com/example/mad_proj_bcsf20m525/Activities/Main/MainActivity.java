@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525;
+package com.example.mad_proj_bcsf20m525.Activities.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mad_proj_bcsf20m525.Activities.login_signup.LoginActivity;
 import com.example.mad_proj_bcsf20m525.Activities.login_signup.SignupActivity;
+import com.example.mad_proj_bcsf20m525.R;
 
 public class MainActivity extends AppCompatActivity {
     private Spinner spinner;

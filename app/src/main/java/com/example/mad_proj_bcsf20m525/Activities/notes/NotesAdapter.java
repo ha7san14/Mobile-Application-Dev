@@ -1,4 +1,4 @@
-package com.example.mad_proj_bcsf20m525.Adapter;
+package com.example.mad_proj_bcsf20m525.Activities.notes;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mad_proj_bcsf20m525.Model.Note.Note;
 import com.example.mad_proj_bcsf20m525.R;
 
 import java.util.ArrayList;

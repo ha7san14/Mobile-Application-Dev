@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mad_proj_bcsf20m525.MainActivity;
+import com.example.mad_proj_bcsf20m525.Activities.Main.MainActivity;
 import com.example.mad_proj_bcsf20m525.R;
 
 public class SplashActivity extends AppCompatActivity {

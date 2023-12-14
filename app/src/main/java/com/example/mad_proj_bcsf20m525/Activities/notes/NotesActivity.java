@@ -1,7 +1,6 @@
 package com.example.mad_proj_bcsf20m525.Activities.notes;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +13,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mad_proj_bcsf20m525.Activities.notes.NotesViewModel;
-import com.example.mad_proj_bcsf20m525.Adapter.NotesAdapter;
-import com.example.mad_proj_bcsf20m525.Model.Note.Note;
 import com.example.mad_proj_bcsf20m525.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;

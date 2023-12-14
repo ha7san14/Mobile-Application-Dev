@@ -12,8 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mad_proj_bcsf20m525.Adapter.MyAdapter;
-import com.example.mad_proj_bcsf20m525.Model.Item;
 import com.example.mad_proj_bcsf20m525.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

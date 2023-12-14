@@ -6,7 +6,6 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mad_proj_bcsf20m525.Adapter.ApiAdapter;
 import com.example.mad_proj_bcsf20m525.R;
 
 import java.util.List;
