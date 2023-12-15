@@ -35,6 +35,6 @@
     android:textSize="18sp"
     android:id="@+id/proceedButton"
     android:enabled="false"
-    android:textColor="@color/black"
+    android:textColor="@color/white"
     android:backgroundTint="@color/orange"/>
     </LinearLayout>
