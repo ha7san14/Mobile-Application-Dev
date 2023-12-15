@@ -7,8 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.mad_proj_bcsf20m525.R;
+import com.example.mad_proj_bcsf20m525.databinding.NotesItemViewBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,16 +21,18 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
     @NonNull
     @Override
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.notes_item_view, parent, false);
-        return new NoteHolder(itemView);
+        // ViewBinding to inflate the layout
+        NotesItemViewBinding binding = NotesItemViewBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new NoteHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
         Note currentNote = notes.get(position);
-        holder.textViewTitle.setText(currentNote.getTitle());
-        holder.textViewDescription.setText(currentNote.getDescription());
+
+        // Use ViewBinding to access views
+        holder.binding.textViewTitle.setText(currentNote.getTitle());
+        holder.binding.textViewDescription.setText(currentNote.getDescription());
     }
 
     @Override
@@ -44,36 +46,25 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
     }
 
     class NoteHolder extends RecyclerView.ViewHolder {
-        private TextView textViewTitle;
-        private TextView textViewDescription;
-        private ImageView imageViewEdit;
-        private ImageView imageViewDelete;
+        // Use ViewBinding for easy access to views
+        private final NotesItemViewBinding binding;
 
-        public NoteHolder(@NonNull View itemView) {
-            super(itemView);
-            textViewTitle = itemView.findViewById(R.id.text_view_title);
-            textViewDescription = itemView.findViewById(R.id.text_view_description);
-            imageViewEdit = itemView.findViewById(R.id.image_view_edit);
-            imageViewDelete = itemView.findViewById(R.id.image_view_delete);
+        public NoteHolder(@NonNull NotesItemViewBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
 
             // Set click listeners for edit and delete icons
-            imageViewEdit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onEditClick(notes.get(position));
-                    }
+            binding.imageViewEdit.setOnClickListener(v -> {
+                int position = getAdapterPosition();
+                if (listener != null && position != RecyclerView.NO_POSITION) {
+                    listener.onEditClick(notes.get(position));
                 }
             });
 
-            imageViewDelete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onDeleteClick(notes.get(position));
-                    }
+            binding.imageViewDelete.setOnClickListener(v -> {
+                int position = getAdapterPosition();
+                if (listener != null && position != RecyclerView.NO_POSITION) {
+                    listener.onDeleteClick(notes.get(position));
                 }
             });
         }

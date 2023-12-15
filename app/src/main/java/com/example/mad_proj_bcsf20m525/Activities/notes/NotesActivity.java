@@ -14,22 +14,28 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mad_proj_bcsf20m525.R;
+import com.example.mad_proj_bcsf20m525.databinding.ActivityNotesBinding;
+import com.example.mad_proj_bcsf20m525.databinding.DialogAddNoteBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.List;
 
 public class NotesActivity extends AppCompatActivity {
 
     private NotesViewModel notesViewModel;
+    private ActivityNotesBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Set the content view to the layout defined in activity_notes.xml
-        setContentView(R.layout.activity_notes);
+        // Initialize ViewBinding
+        binding = ActivityNotesBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         // Initialize RecyclerView for displaying notes
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = binding.recyclerView;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
@@ -62,28 +68,22 @@ public class NotesActivity extends AppCompatActivity {
         });
 
         // Initialize FloatingActionButton for adding new notes
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> showAddNoteDialog());
+        FloatingActionButton fab = binding.fab;
+        fab.setOnClickListener(v -> showAddNoteDialog());
     }
 
     // Display a dialog for adding a new note
     private void showAddNoteDialog() {
+        DialogAddNoteBinding dialogBinding = DialogAddNoteBinding.inflate(getLayoutInflater());
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = this.getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.dialog_add_note, null);
-        dialogBuilder.setView(dialogView);
-
-        final EditText editTextTitle = dialogView.findViewById(R.id.edit_text_title);
-        final EditText editTextDescription = dialogView.findViewById(R.id.edit_text_description);
-        Button buttonAdd = dialogView.findViewById(R.id.button_add);
-        Button buttonCancel = dialogView.findViewById(R.id.button_cancel);
+        dialogBuilder.setView(dialogBinding.getRoot());
 
         final AlertDialog alertDialog = dialogBuilder.create();
 
         // Define actions for the "Add" and "Cancel" buttons in the dialog
-        buttonAdd.setOnClickListener(v -> {
-            String title = editTextTitle.getText().toString().trim();
-            String description = editTextDescription.getText().toString().trim();
+        dialogBinding.buttonAdd.setOnClickListener(v -> {
+            String title = dialogBinding.editTextTitle.getText().toString().trim();
+            String description = dialogBinding.editTextDescription.getText().toString().trim();
 
             // Check if both title and description are non-empty
             if (!title.isEmpty() && !description.isEmpty()) {
@@ -97,7 +97,7 @@ public class NotesActivity extends AppCompatActivity {
         });
 
         // Dismiss the dialog if the "Cancel" button is clicked
-        buttonCancel.setOnClickListener(v -> alertDialog.dismiss());
+        dialogBinding.buttonCancel.setOnClickListener(v -> alertDialog.dismiss());
 
         // Show the dialog
         alertDialog.show();
@@ -105,26 +105,20 @@ public class NotesActivity extends AppCompatActivity {
 
     // Display a dialog for editing an existing note
     private void showEditNoteDialog(final Note note) {
+        DialogAddNoteBinding dialogBinding = DialogAddNoteBinding.inflate(getLayoutInflater());
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = this.getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.dialog_add_note, null);
-        dialogBuilder.setView(dialogView);
-
-        final EditText editTextTitle = dialogView.findViewById(R.id.edit_text_title);
-        final EditText editTextDescription = dialogView.findViewById(R.id.edit_text_description);
-        Button buttonAdd = dialogView.findViewById(R.id.button_add);
-        Button buttonCancel = dialogView.findViewById(R.id.button_cancel);
+        dialogBuilder.setView(dialogBinding.getRoot());
 
         // Pre-fill the dialog fields with the current values of the selected note
-        editTextTitle.setText(note.getTitle());
-        editTextDescription.setText(note.getDescription());
+        dialogBinding.editTextTitle.setText(note.getTitle());
+        dialogBinding.editTextDescription.setText(note.getDescription());
 
         final AlertDialog alertDialog = dialogBuilder.create();
 
         // Define actions for the "Add" and "Cancel" buttons in the dialog
-        buttonAdd.setOnClickListener(v -> {
-            String title = editTextTitle.getText().toString().trim();
-            String description = editTextDescription.getText().toString().trim();
+        dialogBinding.buttonAdd.setOnClickListener(v -> {
+            String title = dialogBinding.editTextTitle.getText().toString().trim();
+            String description = dialogBinding.editTextDescription.getText().toString().trim();
 
             // Check if both title and description are non-empty
             if (!title.isEmpty() && !description.isEmpty()) {
@@ -140,7 +134,7 @@ public class NotesActivity extends AppCompatActivity {
         });
 
         // Dismiss the dialog if the "Cancel" button is clicked
-        buttonCancel.setOnClickListener(v -> alertDialog.dismiss());
+        dialogBinding.buttonCancel.setOnClickListener(v -> alertDialog.dismiss());
 
         // Show the dialog
         alertDialog.show();
