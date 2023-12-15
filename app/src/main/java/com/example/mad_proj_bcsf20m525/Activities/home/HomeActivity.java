@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,27 +18,26 @@ import com.example.mad_proj_bcsf20m525.Activities.calculator.CalculatorActivity;
 import com.example.mad_proj_bcsf20m525.Activities.form.FormActivity;
 import com.example.mad_proj_bcsf20m525.Activities.notes.NotesActivity;
 import com.example.mad_proj_bcsf20m525.R;
+import com.example.mad_proj_bcsf20m525.databinding.ActivityHomeBinding;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class HomeActivity extends AppCompatActivity {
-    private Button calculatorButton;
-    private Button todoButton;
-    private Button apiButton;
-    private Button notesButton;
-    private Button postapiButton;
-    private Button fragmentButton;
+
+    private ActivityHomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        calculatorButton = findViewById(R.id.calculatorButton);
-        todoButton = findViewById(R.id.todoButton);
-        notesButton = findViewById(R.id.notesButton);
-        apiButton = findViewById(R.id.apiButton);
-        postapiButton = findViewById(R.id.postapiButton);
-        fragmentButton = findViewById(R.id.fragmentButton);
+        Button calculatorButton = binding.calculatorButton;
+        Button todoButton = binding.todoButton;
+        Button notesButton = binding.notesButton;
+        Button apiButton = binding.apiButton;
+        Button postapiButton = binding.postapiButton;
+        Button fragmentButton = binding.fragmentButton;
+
 
         calculatorButton.setOnClickListener(new View.OnClickListener() {
             @Override

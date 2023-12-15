@@ -5,8 +5,9 @@ import android.util.Log;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewbinding.ViewBinding;
 
-import com.example.mad_proj_bcsf20m525.R;
+import com.example.mad_proj_bcsf20m525.databinding.ActivityApiBinding;
 
 import java.util.List;
 
@@ -19,13 +20,18 @@ public class ApiActivity extends AppCompatActivity {
     private JsonPlaceholderApi jsonPlaceholderApi;
     private ListView listView;
 
+    private ActivityApiBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_api);
 
-        // Initialize views
-        listView = findViewById(R.id.listView);
+        // Initialize ViewBinding
+        binding = ActivityApiBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        // Replace findViewById with ViewBinding
+        listView = binding.listView;
 
         // Create Retrofit instance
         jsonPlaceholderApi = RetrofitClient.getRetrofitInstance().create(JsonPlaceholderApi.class);

@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_proj_bcsf20m525.R;
+import com.example.mad_proj_bcsf20m525.databinding.ActivityPostApiBinding;  // Import ViewBinding
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,27 +16,20 @@ import retrofit2.Response;
 
 public class PostApiActivity extends AppCompatActivity {
 
-    private EditText txtName, txtJob;
-    private TextView lblOutput;
-    private Button btnPostData;
+    private ActivityPostApiBinding binding;  // Using ViewBinding
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_api);;
+        binding = ActivityPostApiBinding.inflate(getLayoutInflater());  // Initialize ViewBinding
+        setContentView(binding.getRoot());  // Set the root of the inflated view as the content view
 
-        txtName = findViewById(R.id.txtName);
-        txtJob = findViewById(R.id.txtJob);
-        lblOutput = findViewById(R.id.lblOutput);
-        btnPostData = findViewById(R.id.btnPostData);
-
-        btnPostData.setOnClickListener(new View.OnClickListener() {
+        binding.btnPostData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 // Get Data From TextBox
-                String strName = txtName.getText().toString();
-                String strJob = txtJob.getText().toString();
+                String strName = binding.txtName.getText().toString();
+                String strJob = binding.txtJob.getText().toString();
 
                 if (TextUtils.isEmpty(strName)) {
                     Toast.makeText(PostApiActivity.this, "Please Enter Name", Toast.LENGTH_SHORT).show();
@@ -58,7 +49,7 @@ public class PostApiActivity extends AppCompatActivity {
                                 strOutput += "Name : " + response.body().getName() + "\n";
                                 strOutput += "Job : " + response.body().getJob() + "\n";
                                 strOutput += "Created At : " + response.body().getCreatedAt();
-                                lblOutput.setText(strOutput);
+                                binding.lblOutput.setText(strOutput);
                             } else {
                                 Log.e("ResponseError", "onResponse: " + response.message());
                                 Toast.makeText(PostApiActivity.this, "Unsuccessful response", Toast.LENGTH_SHORT).show();
@@ -67,7 +58,6 @@ public class PostApiActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<Model> call, Throwable t) {
-
                             Log.e("RequestError", "onFailure: " + t.getMessage());
                             Toast.makeText(PostApiActivity.this, "Error Occurred", Toast.LENGTH_SHORT).show();
                         }
